@@ -1,0 +1,68 @@
+% M = csvread('Logg.csv',';')
+clc
+hold on
+fileID = fopen('Logg_CSharp.csv');
+C = textscan(fileID,'%f');
+fclose(fileID);
+rawdata_CSharp = C{1};
+data_CSharp = rawdata(2:1000);
+histogram(data_CSharp,'Normalization','pdf','FaceColor','r')
+
+fileID = fopen('Logg_FSharp.csv');
+C = textscan(fileID,'%f');
+fclose(fileID);
+rawdata_FSharp = C{1};
+data_FSharp = rawdata(2:1000);
+histogram(data_FSharp,'Normalization','pdf','FaceColor','b')
+
+fileID = fopen('Logg_FSharp_direct.csv');
+C = textscan(fileID,'%f');
+fclose(fileID);
+rawdata_FSharp_direct = C{1};
+data_FSharp_direct = rawdata(2:1000);
+histogram(data_FSharp_direct,'Normalization','pdf','FaceColor','r')
+
+%tabulate(round(C{1}*1000)/1000)
+%data = rawdata(2:1000);
+% trim = trimmean(data,10);
+% tabulate(round(data*1000)/1000);
+
+
+
+
+%plot(h,(0:9))
+%bar(M(1:end-1,1),M(1:end-1,3))
+% d = c{1} 2:1000
+% hist(C{1})
+%disp(C{1})
+% y = zeros(size(C{1}));
+% for i = 1:length(C{1})
+% y(i) = sum(C{1}==C{1}(i));
+% end
+% 
+% plot(C{1},y)
+% Load the sample data
+% load Logg.csv
+% % Find the maximum value in each column
+% mx = max(Logg)
+% % Calculate the mean of each column
+% mu = mean(Logg)
+% % Calculate the standard deviation of each column
+% sigma = std(Logg)
+% 
+% % To get the row numbers where the maximum data values occur in each data column, 
+% % specify a second output parameter indx to return the row index.
+% 
+% [mx,indx] = max(count)
+
+% [n,p] = size(Logg);
+% 
+% % Define the x-values
+% t = 0:0.00001:0.01-0.000001;
+% fprintf('%d : %d',length(Logg),length(t))
+% fanplot
+% % Plot the data and annotate the graph
+% plot(t,Logg)
+% legend('Outcome')
+% xlabel('Time')
+% ylabel('Logg Count')
