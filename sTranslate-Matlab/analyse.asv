@@ -2,7 +2,7 @@ close all;
 clear all;
 
 % Read files and add to array
-logging{1} = csvread('Logg_FSharp_direct.csv');
+logging{1} = csvread('logCSharpNoCache.csv');
 logging{2} = csvread('logCSharpWithCache.csv');
 logging{3} = csvread('logFSharpCache.csv');
 logging{4} = csvread('logFSharpDirectNoCache.csv');
